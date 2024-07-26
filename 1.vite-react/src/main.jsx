@@ -24,10 +24,14 @@ function MyApp() {
 // const anotherElement = <a href="https://google.com" target="_blank">Visit Google</a>
 
 // This is how react excepts props to be. This is the correct structure. --This will work perfectly and need no parsing-- !! In this element we will use react's own method React.createElement 
+
+const newElement = " -Inject me into JSX"
+
 const reactElement = React.createElement(
   'a',
   {href:"https://google.com", target:"_blank"},
-  "Click me to cisit google"
+  "Click me to visit google",
+  newElement
 )
 
 
