@@ -1,34 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
+const [count, setCount] = useState(0)
+const addValue = ()=>{
+  if (count < 20) {
+  setCount(count+1)
+}}
 
+const subtractValue = ()=>{
+  if(count > 0) {
+  setCount(count - 1)
+}}
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+   <div className=" text-white grid place-items-center w-full h-screen bg-slate-700">
+    <div className="space-y-4 text-center">
+   <h1 className="font-semibold text-5xl bg-slate-900 p-5 rounded-xl">Count: {count}</h1>
+   <button onClick={addValue} className="font-medium bg-slate-900  py-2 px-5 rounded-full bg-white text-slate-900 m-5" >Add +</button>
+   <br />
+   <button onClick={subtractValue} className="font-medium bg-slate-900  py-2 px-5 rounded-full bg-white text-slate-900 m-5">Subtract -</button>
+   </div>
+   </div>
   )
 }
 
